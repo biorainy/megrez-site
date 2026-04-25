@@ -476,6 +476,7 @@ h3 {
   font-size: 0.9rem;
 }
 
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -551,6 +552,7 @@ h3 {
     padding-top: 52px;
   }
 }
+
 
 @media (max-width: 720px) {
   .page-shell {

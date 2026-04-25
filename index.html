@@ -9,6 +9,9 @@
       content="Megrez helps mobile product teams understand whether growth is healthy by making L7, L30, and L90 lifecycle accounting explicit."
     />
     <link rel="stylesheet" href="./styles.css" />
+    <!-- Calendly popup widget: replace the URL below with your Calendly link -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   </head>
   <body>
     <div class="page-shell">
@@ -37,7 +40,7 @@
               building churn prediction systems at a major consumer tech company.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#contact">Book a demo</a>
+              <a class="button button-primary" href="#" data-calendly-url="https://calendly.com/biorainy/megrez-demo">Book a demo</a>
             </div>
           </div>
 
@@ -277,8 +280,8 @@
               </p>
             </div>
             <div class="cta-band-actions">
-              <a class="button button-primary button-wide" href="mailto:biorainy@gmail.com?subject=Megrez%20demo%20request">Book a 20-minute demo</a>
-              <a class="button button-secondary button-wide" href="mailto:biorainy@gmail.com?subject=Megrez%20design%20partner%20program">Apply for the early program</a>
+              <a class="button button-primary button-wide" href="#" data-calendly-url="https://calendly.com/biorainy/megrez-demo">Book a 20-minute demo</a>
+              <a class="button button-secondary button-wide" href="#contact">Apply for the early program</a>
               <p class="cta-microcopy">Best fit: mobile product teams with real event data and an active retention problem.</p>
             </div>
           </div>
@@ -359,8 +362,8 @@
               experience shaped by real consumer scale.
             </p>
             <div class="contact-actions">
-              <a class="button button-primary" href="mailto:biorainy@gmail.com?subject=Megrez%20demo%20request">Book a demo</a>
-              <a class="button button-secondary" href="mailto:biorainy@gmail.com?subject=Megrez%20design%20partner%20program">Apply for the early program</a>
+              <a class="button button-primary" href="#" data-calendly-url="https://calendly.com/biorainy/megrez-demo">Book a 20-minute demo</a>
+              <a class="button button-secondary" href="https://calendly.com/biorainy/megrez-demo" target="_blank" rel="noopener">Apply for the early program</a>
             </div>
             <div class="contact-proof">
               <div class="proof-pill">Founder-led onboarding</div>
@@ -378,6 +381,18 @@
         <img class="lightbox-image" id="lightbox-image" alt="" />
       </div>
     </div>
+    <script>
+      document.querySelectorAll("[data-calendly-url]").forEach(function (el) {
+        el.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (typeof Calendly !== "undefined") {
+            Calendly.initPopupWidget({ url: this.dataset.calendlyUrl });
+          } else {
+            window.open(this.dataset.calendlyUrl, "_blank");
+          }
+        });
+      });
+    </script>
     <script>
       const lightbox = document.getElementById("lightbox");
       const lightboxImage = document.getElementById("lightbox-image");
